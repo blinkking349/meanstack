@@ -1,0 +1,67 @@
+<div class="container">
+    <h2>{{title}}</h2>
+<br>
+<div class="message success" *ngIf="status == 'success' && save_project" >
+    El Projecto se a cargado correctamente, puedes  <a [routerLink]="['/details',save_project._id]">verlo aqui</a>
+</div>   
+<div class="message failed" *ngIf="status == 'failed'" >
+    El Projecto NO SE HA PODIDO CARGAR
+</div>    
+<br>
+<!-- Formulario Create Project -->
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)" *ngIf="project">
+
+        <p>
+            <label for="name">Url proyecto:</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" 
+            required>
+            <span class="form_error" *ngIf="name.touched && !name.valid" >
+                La url es obligatoria
+            </span>
+        </p>
+       
+        <br>
+        <p>
+            <label for="description">Descripcion:</label>
+            <textarea name="description" #description="ngModel" [(ngModel)]="project.description" 
+            required></textarea>
+            <span class="form_error" *ngIf="description.touched && !name.valid">
+                La descripcion es obligatoria
+            </span>
+        </p>
+        
+        <br>
+        <p>
+            <label for="year">Año:</label>
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" 
+            required>
+        <br>
+        <br>
+        <p>
+            <label for="langs">Lenguajes:</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" 
+            required>
+            <span class="form_error" *ngIf="langs.touched && !langs.valid">
+                Los lenguajes son obligatorio 
+            </span>
+        </p>
+        
+        <br>
+        
+        <p>
+            <label for="image">Imagen del proyecto:</label>
+            <span *ngIf="project.image">
+                <img src="{{ url + 'get-image/' + project.image }}" style="width:220px;" >
+            </span>
+            <br>
+            <input type="file" name="image" placeholder="Subir Imagen" (change)="fileChangeEvent($event)">
+            
+        </p>
+
+        <br>
+        
+        <input type="submit" value="enviar" [disabled]="!projectForm.form.valid" >
+
+    </form>
+
+</div>

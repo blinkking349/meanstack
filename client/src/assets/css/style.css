@@ -1,0 +1,371 @@
+/* Import Fonts */
+@font-face{
+   font-family: "Brightlast";
+   src: url("../fonts/Brightlast.ttf");
+}
+
+@font-face{
+   font-family:"Balibrush" ;
+   src: url("../fonts/Balibrush.otf");
+}
+
+@font-face{
+   font-family:"Wooble" ;
+   src: url("../fonts/Nooble Wooble.ttf");
+}
+
+@font-face{
+   font-family: "Bebas";
+   src: url("../fonts/BebasNeue-Regular.woff2");
+}
+@font-face{
+   font-family: "Crush";
+   src: url("../fonts/Brightly Crush Shine.otf");
+}
+
+/* Body */
+*{
+   margin: 0px;
+   padding: 0px;
+}
+
+body{
+  
+   background-attachment: fixed;
+}
+
+.clearfix{
+   float: none;
+   clear: both;
+}
+
+h1{
+   text-align: center;
+   font-family: "Brightlast";
+   font-size: 50px;
+}
+
+.main-menu ul{
+   list-style: none;
+}
+
+/* Footer */
+.footer{
+   padding-top:10px ;
+   font-family:"Balibrush";
+   font-size: 20px;
+   text-align: center;
+   height: 150px;
+   display: block;
+
+   background-color: #4158D0;
+   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+/* Barra de navegacion Header */
+
+header{
+   display:block;
+   width: 100%;
+   height: 90px;
+   background-color: #4158D0;
+   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+   text-transform: uppercase;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header ul{
+   display: block;
+   width: 30%;
+   height: inherit;
+   margin: 0px auto;
+   margin-top: -6xpx;
+}
+
+header ul li{
+   display: inline-block;
+   margin: 0px auto;
+   text-align: center;
+   line-height: 77px;
+}
+
+header a{
+   display: block;
+   padding-right: 15px;
+   padding-left: 15px;;
+   height: inherit;
+   text-decoration: none;
+   color: white;
+   transition: all 300ms;
+}
+
+header ul {
+   display: block;
+   width: 750px;
+   height: inherit;
+   margin: 0px auto;
+}
+
+header a:hover,
+.actived{
+   background: rgba(0, 0, 0, 0.8);
+   transition: 0.8s;
+}
+
+/*Logo Tipo*/
+#logo{
+   font-family: "Crush";
+   font-size: 30px;
+}
+
+#logo a{
+   transition: color 400ms;
+   transform: 500ms;
+}
+
+#logo a:hover{
+   background: transparent;
+   color:rgb(251, 255, 0);
+   transform: scale(1.50, 1.50);
+}
+
+/*Contenedor Principal */
+#content{
+   min-height: 800px;
+   height: auto;
+   width: 90%;
+   margin: 0px auto;
+   border-left: 1px solid #b7b7b7;
+   border-right:1px solid #b7b7b7;
+
+   box-shadow:0px 0px 40px rgb(0, 0, 0);
+   background: rgba(238, 247, 240, 0.7);
+   padding-top:50px;
+   
+}
+
+/*Pie de pagina*/
+#footer{
+   width: 75%;
+   margin:  0px auto;
+   padding-top: 15px;
+   color: rgba(0, 0, 0, 0.8);
+}
+
+/*Sobre Mi*/
+#title{
+   width: 70%;
+   margin: 0px auto;
+   text-align: center;
+   margin-bottom:80px;
+   margin-top: -20px;
+}
+
+#title h1{
+   font-family: "Brightlast" ;
+   font-size: 45px;
+   border-bottom:2px solid #ccc ;
+}
+#title h2{
+   font-size: 20px;
+   color: gray;
+   margin-top: 5px;
+   margin-bottom: 5px;
+}
+
+article.about{
+   width: 70%;
+   margin: 0px auto;
+   margin-bottom: 20px;
+   font-size: 15px;
+}
+.about h2{
+   border-bottom: 2px solid #ccc;
+   padding-bottom: 5px;
+   margin-bottom: 5px;
+}
+.about p{
+   padding-bottom: 20px;
+   padding-bottom: 30px;
+   text-align: justify;
+}
+
+/*seccion formulario - Creacion de Proyectos*/
+
+.container{
+   padding: 70px;
+   padding-top: 10px;
+}
+.container h2{
+   display: block;
+   border-bottom: 1px solid #ccc;
+   padding-bottom: 5px;
+   margin-bottom: 10px;
+}
+
+form{
+   width: 80%;
+}
+
+form label{
+   width: 100%;
+   display: block;
+   margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea{
+   width: 40%;
+   padding: 5px;
+   border: none;
+   border-bottom: 1.8px solid rgb(212, 212, 212);
+   padding-top: 10px;
+}
+
+form button,
+form input[type="submit"],
+.button-edit,
+.button-delete{
+   width: 70px;
+   font-size: 23px;
+   font-size: 23px;
+   font-family: "Crush";
+   background:rgba(53, 103, 164, 0.8);
+   border: 1px solid rgba(53, 103, 164, 0.8);
+   cursor: pointer;
+   transition: 0.8s;
+   color: black;
+   
+}
+
+.button-edit,
+.button-delete{
+   width: 30%;
+   text-align: center;
+   margin: 2px;
+   opacity: 0.8;
+   border: 1px solid rgba(1, 1, 2, 0.8);
+}
+.button-edit:hover,
+.button-delete:hover{
+   background:rgba(29, 198, 250, 0.8);
+   
+}
+
+
+form button:hover,
+form input[type="submit"]:hover{
+
+   background:rgba(53, 103, 164, 0.3);
+   border: 1px solid rgba(53, 103, 164, 0.8);
+   transition: 0.8s;
+}
+form input[disabled]{
+   opacity:0.4;
+   cursor:not-allowed;
+}
+
+.form_error{
+   padding: 3px;
+   background: red;
+   color: white;
+   font-size: 17px;
+   margin-left: 5px;
+}
+
+.message{
+   width: 100%;
+   padding: 8px;
+   border: 1px solid #eee;
+}
+
+.success{
+   background: rgb(25, 196, 25);
+   color: white;
+}
+.success a{
+   color:white;
+}
+.failed{
+   background: red;
+   color:white;
+}
+
+/*Pagina de Proyectos*/
+
+.container h2{
+   letter-spacing:0.8px ;
+   font-family: "Bebas";
+   font-size: 35px;
+}
+
+.project{
+   font-family: "Bebas";
+   text-align: justify;
+   letter-spacing: 1.1px;
+   list-style: none;
+   display: block;
+   float: left;
+   width: 25%;
+   text-align: center;
+   margin-left: 20px;
+   margin-right: 20px;
+   margin-bottom: 30px;
+}
+.project img{
+   width: 100%;
+   height: 100%;
+}
+
+.project .image{
+   width: 100%;
+   height: 150px;
+   overflow: hidden;
+}
+.project a{
+   text-decoration: none;
+   color: black;
+}
+
+/* Pagina de  Detalles*/
+.container-details img{
+   float: left;
+   width: 40%;
+   height: 40%;
+   margin-left:20px;
+
+}
+.container-details .data{
+   float: left;
+   width: 49%;
+   margin-left:10px;
+}
+.container-details p{
+   font-size: 20px;
+}
+
+.deleteConfirm{
+   margin-bottom: 17px;
+    border: 2px solid black;
+    display: block;
+    background-color: red;
+    color: white;
+}
+
+.data h3{
+   padding-top: 10px;
+}
+.link{
+   font-size: 20px;
+}
+
+
+/* Pagina de Contacto */
+.contactame{
+   font-family: "Brightlast";
+   font-size: 40px;
+}
+

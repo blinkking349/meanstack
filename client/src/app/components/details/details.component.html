@@ -1,0 +1,38 @@
+
+<div class="container-details" *ngIf="project" >
+
+        <div class="message success" *ngIf="status == 'success' && save_project" >
+            El Proyecto se ha cargado correctamente, puedes <a [routerLink]="['/details', save_project._id]"> verlo aqui </a>
+        </div>
+        <div class="message failed" *ngIf="status == 'failed'">
+            El Proyecto no se ha podido cargar
+        </div>
+        <div class="imagen">
+            <img src="{{url+'get-image/'+project.image}}" *ngIf="project.image" />
+        </div>
+        <div class="data" *ngIf="project">
+            <h3>Link:</h3>
+            <a class="link" href="{{project.name}}">{{project.name}}</a>
+            <h3>Descripcion:</h3>
+            <p>{{project.description}}</p>
+            <h3>Lenguaje:</h3>
+            <p>{{project.langs}}</p>
+            <h3>Año:</h3>
+            <p>{{project.year}}</p> 
+            <p *ngIf="confirm == 'false'">
+                <a [routerLink]="['/editar-proyecto', project._id]" class="button-edit">Editar</a>
+              <!--  <a (click)="setConfirm('true')" class="button-delete">Borrar</a> -->
+            </p>
+            <p *ngIf="confirm == 'true'">
+               <span class="deleteConfirm"> Estas seguro de eliminar este proyecto? </span>
+                <a (click)="setConfirm('false')" class="button-edit">Cancelar</a>
+                <a (click)="deleteProject(project._id)" class="button-delete">Eliminar</a>
+            </p>
+        </div>  
+
+
+        <div *ngIf="!project">
+            no se cargo el proyecto
+        </div>
+
+</div>

@@ -1,0 +1,84 @@
+
+<div class="container">
+   <h2> {{title}} </h2>
+
+   <br>
+   <p class="contactame">Enviame un email para contactarme</p>
+   <br>
+   <div class="message success" *ngIf="status == 'success' && save_contact" >
+        Email enviado correctamente
+    </div>
+    <br>   
+    <div class="message failed" *ngIf="status == 'failed'" >
+        Problemas al enviar email, reintentar ...
+    </div>   
+    <br>
+
+   <!-- Formulario de Contact -->
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" *ngIf="contact">
+
+    <p>
+        <label for="firstName">Nombre:</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="contact.firstName" 
+        required> 
+        
+        <span class="form_error" *ngIf="name.touched && !name.valid" > 
+            El nombre es obligatorio
+        </span>
+    </p>
+    <br>
+    <p>
+        <label for="last">Apellido:</label>
+        <input type="text" name="last" #lastName="ngModel" [(ngModel)]="contact.lastName" 
+        required> 
+        
+        <span class="form_error" *ngIf="lastName.touched && !lastName.valid">
+             El apellido es obligatorio
+        </span>
+    </p>
+    <br>
+    <p>
+        <label for="name">Email de contacto:</label>
+        <input type="text" name="email" #emailAddress="ngModel" [(ngModel)]="contact.emailAddress" 
+        required> 
+        
+        <span class="form_error" *ngIf="emailAddress.touched && !emailAddress.valid">
+            El email es obligatorio
+        </span>
+    </p>
+    <br>
+    <p>
+        <label for="name">Telefono:</label>
+        <input type="text" name="phone" #phoneNumber="ngModel" [(ngModel)]="contact.phoneNumber" 
+        required> 
+        
+        <span class="form_error" *ngIf="phoneNumber.touched && !phoneNumber.valid">
+            El telefono es obligatorio
+        </span>
+    </p>
+    <br>
+    <p>
+        <label for="name">Asunto:</label>
+        <input type="text" name="subject" #subject="ngModel" [(ngModel)]="contact.subject" 
+        required> 
+        
+        <span class="form_error" *ngIf="subject.touched && !subject.valid">
+            El asunto es obligatorio
+        </span>
+    </p>
+    <br>
+    <p>
+        <label for="message">Descripcion:</label>
+        <textarea name="message" #message="ngModel" [(ngModel)]="contact.message"></textarea>
+        <span class="form_error" *ngIf="message.touched && !message.valid">
+           El mensaje es obligatorio
+        </span>
+    </p>
+
+    <br>
+    <input type="submit" value="enviar" [disabled]="!contactForm.form.valid" >
+
+</form>
+
+
+</div>
